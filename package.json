@@ -4,7 +4,7 @@
   "description": "Google Apps Script Core",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "babel --presets es2015,stage-1 --plugins transform-export-extensions -d lib/ src/",
+    "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
     "test": "BABEL_CACHE_PATH=.cache/babel.json tape -r babel-register tests/local/**/*.js",
     "build": "webpack --config=webpack.config.js",

@@ -5,6 +5,7 @@
     ],
     "plugins": [
         "transform-runtime",
-        "closure-elimination"
+        "closure-elimination",
+        "transform-export-extensions"
     ]
 }
