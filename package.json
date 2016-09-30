@@ -1,7 +1,7 @@
 {
-  "name": "gas-from-scratch",
-  "version": "0.1.139",
-  "description": "Google Apps Script from scratch",
+  "name": "gas-core",
+  "version": "0.1.0",
+  "description": "Google Apps Script Core",
   "main": "index.js",
   "scripts": {
     "test": "BABEL_CACHE_PATH=.cache/babel.json tape -r babel-register tests/local/**/*.js",
