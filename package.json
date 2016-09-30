@@ -4,6 +4,8 @@
   "description": "Google Apps Script Core",
   "main": "index.js",
   "scripts": {
+    "compile": "babel --presets es2015,stage-1 -d lib/ src/",
+    "prepublish": "npm run compile",
     "test": "BABEL_CACHE_PATH=.cache/babel.json tape -r babel-register tests/local/**/*.js",
     "build": "webpack --config=webpack.config.js",
     "dist": "NODE_ENV=production webpack --config=webpack.config.js",
@@ -19,6 +21,7 @@
   "author": "Jungle",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-closure-elimination": "^1.0.6",
