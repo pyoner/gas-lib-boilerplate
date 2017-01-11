@@ -4,8 +4,9 @@
   "description": "Google Apps Script Core",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "rm -fr lib/ && babel -d lib/ src/",
+    "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
+    "postpublish": "rm -fr lib/",
     "test": "BABEL_CACHE_PATH=.cache/babel.json tape -r babel-register tests/local/**/*.js",
     "build": "webpack --config=webpack.config.js",
     "dist": "NODE_ENV=production webpack --config=webpack.config.js",
