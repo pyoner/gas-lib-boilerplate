@@ -10,6 +10,23 @@ var TEST_DIR = path.join(__dirname, 'tests');
 var BUILD_DIR = path.join(__dirname, 'build');
 var NODE_DIR = path.join(__dirname, 'node_modules');
 
+var UGLIFY_COMMON_OPTIONS = {
+    mangle: false,
+    output: {
+        quote_keys: true,
+    }
+}
+
+var UGLIFY_DEV_OPTIONS = Object.assign({}, UGLIFY_COMMON_OPTIONS, {
+    beautify: true,
+});
+
+var UGLIFY_PROD_OPTIONS = Object.assign({}, UGLIFY_COMMON_OPTIONS, {
+    compress: {
+        warnings: false,
+    }
+})
+
 var config = {
     entry: {
         webapp: [
@@ -51,16 +68,16 @@ var config = {
         fs: 'empty',
     }
 }
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
     config.plugins = config.plugins.concat([
         new webpack.DefinePlugin({
             'process.env': { 'NODE_ENV': JSON.stringify('production') }
         }),
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: true } })
+        new webpack.optimize.UglifyJsPlugin(UGLIFY_PROD_OPTIONS)
     ])
 } else {
     config.plugins = config.plugins.concat([
-        new webpack.optimize.UglifyJsPlugin({ beautify: true })
+        new webpack.optimize.UglifyJsPlugin(UGLIFY_DEV_OPTIONS)
     ])
 }
 
