@@ -45,4 +45,16 @@ test('core initApp', (t) => {
         t.equal(context.doGet(1), 3);
         t.end();
     });
+
+    t.test('test middleware with app as second parameter', (t) => {
+        let context = {};
+        let middleware = (type, app_) => {
+            t.equal(app_, app);
+            return (next) => (event) => 1 + next(event)
+        };
+        initApp(app, [middleware, middleware], context);
+
+        t.equal(context.doGet(1), 3);
+        t.end();
+    });
 });
