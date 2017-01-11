@@ -33,16 +33,6 @@ var config = {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
                 include: [SRC_DIR, TEST_DIR],
-                query: {
-                    presets: [
-                        'es2015',
-                        'stage-1',
-                    ],
-                    plugins: [
-                        'transform-runtime',
-                        'closure-elimination',
-                    ]
-                }
             }
         ]
     },
