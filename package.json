@@ -1,7 +1,7 @@
 {
-  "name": "gas-lib-template",
+  "name": "gas-lib-boilerplate",
   "version": "0.1.16",
-  "description": "Google Apps Script lib template",
+  "description": "Google Apps Script lib boilerplate",
   "main": "lib/index.js",
   "scripts": {
     "compile": "babel -d lib/ src/lib",
@@ -18,7 +18,9 @@
     "script",
     "gas",
     "template",
-    "lib"
+    "boilerplate",
+    "lib",
+    "library"
   ],
   "author": "Jungle",
   "license": "MIT",
