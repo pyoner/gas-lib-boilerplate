@@ -1,4 +1,4 @@
-# Google Apps Script lib template
+# Google Apps Script lib boilerplate
 
 ## Usage for lib
 Put your code inside src/lib directory.
