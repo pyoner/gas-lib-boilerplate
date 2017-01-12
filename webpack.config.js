@@ -14,6 +14,11 @@ var UGLIFY_COMMON_OPTIONS = {
     mangle: false,
     output: {
         quote_keys: true,
+        screw_ie8: false,
+    },
+    compress: {
+        warnings: false,
+        screw_ie8: false,
     }
 }
 
@@ -21,11 +26,7 @@ var UGLIFY_DEV_OPTIONS = Object.assign({}, UGLIFY_COMMON_OPTIONS, {
     beautify: true,
 });
 
-var UGLIFY_PROD_OPTIONS = Object.assign({}, UGLIFY_COMMON_OPTIONS, {
-    compress: {
-        warnings: false,
-    }
-})
+var UGLIFY_PROD_OPTIONS = Object.assign({}, UGLIFY_COMMON_OPTIONS)
 
 var config = {
     entry: {
