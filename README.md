@@ -1,5 +1,15 @@
 # Google Apps Script lib boilerplate
 
+## Install
+First, clone the repo via git:
+```bash
+git clone https://github.com/pyoner/gas-lib-boilerplate.git your-project-name
+```
+And then install dependencies.
+```bash
+$ cd your-project-name && npm install
+```
+
 ## Usage for lib
 Put your code inside src/lib directory.
 To publish lib code on npm run:
